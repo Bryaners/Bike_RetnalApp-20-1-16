@@ -44,6 +44,16 @@ public class LoginActivity extends Activity {
         //Toast.makeText(LoginActivity.this, "Step1 !", Toast.LENGTH_SHORT).show();
         //button working clicking here down
 
+        //Trying to fix login button
+        mCreateAccountBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+				startActivity(intent);
+			}
+		});
+
+        /*
         mCreateAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +62,7 @@ public class LoginActivity extends Activity {
                 //Intent takeUserReg = new Intent(LoginActivity.this, RegisterActivity.class);
                 //startActivity(takeUserReg);
             }
-        });
+        });*/
 
         //when the LogginButton is Clicked
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -104,27 +114,7 @@ public class LoginActivity extends Activity {
 
 
 
-                /*ParseUser.logInInBackground(username, password, new LogInCallback() {
-                    @Override
-                    public void done(ParseUser parseUser, ParseException e) {
 
-                        if(e == null){
-                            //Login Was Completed
-                            Toast.makeText(LoginActivity.this,"Welcome Back !",Toast.LENGTH_LONG).show();
-
-                            Intent takeUserHome = new Intent(LoginActivity.this, HomePageActivity.class);
-                            startActivity(takeUserHome);
-                        }
-                        else{
-                            Login was unCompleted
-                            //sorry there was a problem. make window pop up
-                            AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                            builder.setMessage(e.getMessage());
-                            builder.setTitle("Sorry Lad");
-                        }
-
-                    }
-                });   */
 
 
             }
