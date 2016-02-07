@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
@@ -27,9 +26,9 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Parse.enableLocalDatastore(this);
+       // Parse.enableLocalDatastore(this);
 
-        Parse.initialize(this, "cRisvlAkyzGI9gpJSRklDLNflxZ1bDoM8iHdQTOj", "BQlKHhqkSnraH9WHGoS6y41AmH0QxnYCDMOWJCVE");
+       // Parse.initialize(this, "cRisvlAkyzGI9gpJSRklDLNflxZ1bDoM8iHdQTOj", "BQlKHhqkSnraH9WHGoS6y41AmH0QxnYCDMOWJCVE");
 
        // ParseObject testObject = new ParseObject("Transaction");
        // testObject.put("NameOfBike", "Bike 5");
@@ -44,25 +43,18 @@ public class LoginActivity extends Activity {
         //Toast.makeText(LoginActivity.this, "Step1 !", Toast.LENGTH_SHORT).show();
         //button working clicking here down
 
-        //Trying to fix login button
-        mCreateAccountBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-				startActivity(intent);
-			}
-		});
 
-        /*
+        //Trying to fix login button
         mCreateAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Toast.makeText(LoginActivity.this, "clicked signned bike button", Toast.LENGTH_LONG).show();
-                //Intent takeUserReg = new Intent(LoginActivity.this, RegisterActivity.class);
-                //startActivity(takeUserReg);
+                Intent takeUsertoReg = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(takeUsertoReg);
             }
-        });*/
+        });
+
+
+
 
         //when the LogginButton is Clicked
         mLoginBtn.setOnClickListener(new View.OnClickListener() {

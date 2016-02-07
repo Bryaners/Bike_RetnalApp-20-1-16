@@ -28,6 +28,8 @@ public class HomePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
+
+
         mRentaBike=(Button)findViewById(R.id.RentBikeButton);
 
         mRentaBike.setOnClickListener(new View.OnClickListener() {
@@ -72,20 +74,18 @@ public class HomePageActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
         switch(id){
             case R.id.updateStatus:
         //take user to update status activity
-      //  intent
+                Intent takeUserColl = new Intent(this, CollegeCampusActivity.class);
+                startActivity(takeUserColl);
         break;
 
             case R.id.logout_user:
             //log out the user
             ParseUser.logOut();
             //take the user to back to login screen
-            Intent takeUserToLogin = new Intent(HomePageActivity.this, RegisterActivity.class);
+            Intent takeUserToLogin = new Intent(this, LoginActivity.class);
             startActivity(takeUserToLogin);
         break;
         }

@@ -8,9 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.parse.Parse;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
@@ -28,13 +26,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         // change to make git work
         // Enable Local Datastore.
-        Parse.enableLocalDatastore(this);
+        //Parse.enableLocalDatastore(this);
 
-        Parse.initialize(this, "cRisvlAkyzGI9gpJSRklDLNflxZ1bDoM8iHdQTOj", "BQlKHhqkSnraH9WHGoS6y41AmH0QxnYCDMOWJCVE");
-
+        //Parse.initialize(this, "cRisvlAkyzGI9gpJSRklDLNflxZ1bDoM8iHdQTOj", "BQlKHhqkSnraH9WHGoS6y41AmH0QxnYCDMOWJCVE");
+/*
         ParseObject testObject = new ParseObject("Transaction");
         testObject.put("byran", "Power");
-        testObject.saveInBackground();
+        testObject.saveInBackground();*/
 
         Toast.makeText(RegisterActivity.this,"App is in launched on the 19th", Toast.LENGTH_LONG).show();
         //initialise the the edittexts
