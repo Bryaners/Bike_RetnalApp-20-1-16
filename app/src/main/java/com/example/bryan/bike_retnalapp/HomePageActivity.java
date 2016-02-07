@@ -42,6 +42,18 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
+        mGallery=(Button)findViewById(R.id.GalleryButton);
+
+        mGallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Toast.makeText(HomePageActivity.this, "clicked rent bike button", Toast.LENGTH_LONG).show();
+                Intent takeUserToStatus = new Intent(HomePageActivity.this, MainActivity.class);
+                startActivity(takeUserToStatus);
+            }
+        });
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
