@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -21,6 +22,7 @@ public class UpdateStatusActivity extends AppCompatActivity {
 
     protected EditText mStatusUpdate;
     protected Button mstatusButton;
+    protected ImageView mStatusImgView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,76 +31,92 @@ public class UpdateStatusActivity extends AppCompatActivity {
 
 
         //init
-        mStatusUpdate = (EditText)findViewById(R.id.UpdateTextBox);
-        mstatusButton = (Button)findViewById(R.id.statusUpdateButton);
+        mStatusUpdate = (EditText) findViewById(R.id.UpdateTextBox);
+        mstatusButton = (Button) findViewById(R.id.statusUpdateButton);
+        mStatusImgView = (ImageView) findViewById(R.id.imgViewContactManger);
 
-        mstatusButton.setOnClickListener(new View.OnClickListener(){
+        mstatusButton.setOnClickListener(new View.OnClickListener() {
 
-                 @Override
-                 public void onClick(View view){
+                                             @Override
+                                             public void onClick(View view) {
 
-                     String newStatus = mStatusUpdate.getText().toString();
+                                                 String newStatus = mStatusUpdate.getText().toString();
 
-                     if(newStatus.isEmpty()){
+                                                 if (newStatus.isEmpty()) {
 
-                         AlertDialog.Builder buidler = new AlertDialog.Builder(UpdateStatusActivity.this);
-                         buidler.setMessage("Status can not be emphy!");
-                         buidler.setTitle("Oops!");
-                         buidler.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                             @Override
-                             public void onClick(DialogInterface dialogInterface, int which) {
-                                 //close the dialog when button pressed
-                                 dialogInterface.dismiss();
-                             }
-                         });
+                                                     AlertDialog.Builder buidler = new AlertDialog.Builder(UpdateStatusActivity.this);
+                                                     buidler.setMessage("Status can not be empty!");
+                                                     buidler.setTitle("Oops!");
+                                                     buidler.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                                         @Override
+                                                         public void onClick(DialogInterface dialogInterface, int which) {
+                                                             //close the dialog when button pressed
+                                                             dialogInterface.dismiss();
+                                                         }
+                                                     });
 
-                         AlertDialog dialog = buidler.create();
-                         dialog.show();
+                                                     AlertDialog dialog = buidler.create();
+                                                     dialog.show();
 
-                     }else {
+                                                 } else {
 
-                         ParseObject statusObject = new ParseObject("Status");//class name in parse
-                         statusObject.put("newStatus", newStatus);
+                                                     ParseObject statusObject = new ParseObject("Status");//class name in parse
+                                                     statusObject.put("newStatus", newStatus);
 
-                         statusObject.saveInBackground(new SaveCallback() {
-                             @Override
-                             public void done(ParseException e) {
-                                 if (e == null) {
-                                     //successfully stored it
+                                                     statusObject.saveInBackground(new SaveCallback() {
+                                                         @Override
+                                                         public void done(ParseException e) {
+                                                             if (e == null) {
+                                                                 //successfully stored it
 
-                                     Toast.makeText(UpdateStatusActivity.this, "success !", Toast.LENGTH_LONG).show();
+                                                                 Toast.makeText(UpdateStatusActivity.this, "success !", Toast.LENGTH_LONG).show();
 
-                                     Intent takeUserCollegeCampus = new Intent(UpdateStatusActivity.this, MainActivity.class);
-                                     startActivity(takeUserCollegeCampus);
+                                                                 Intent takeUserCollegeCampus = new Intent(UpdateStatusActivity.this, MainActivity.class);
+                                                                 startActivity(takeUserCollegeCampus);
 
-                                 } else {
-                                     //there was an error storing new status advice the user
+                                                             } else {
+                                                                 //there was an error storing new status advice the user
 
-                                     AlertDialog.Builder buidler = new AlertDialog.Builder(UpdateStatusActivity.this);
-                                     buidler.setMessage(e.getMessage());
-                                     buidler.setTitle("Warning!");
-                                     buidler.setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
-                                         @Override
-                                         public void onClick(DialogInterface dialogInterface, int which) {
-                                             //close the dialog when button pressed
-                                             dialogInterface.dismiss();
+                                                                 AlertDialog.Builder buidler = new AlertDialog.Builder(UpdateStatusActivity.this);
+                                                                 buidler.setMessage(e.getMessage());
+                                                                 buidler.setTitle("Warning!");
+                                                                 buidler.setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
+                                                                     @Override
+                                                                     public void onClick(DialogInterface dialogInterface, int which) {
+                                                                         //close the dialog when button pressed
+                                                                         dialogInterface.dismiss();
+                                                                     }
+                                                                 });
+
+                                                                 AlertDialog dialog = buidler.create();
+                                                                 dialog.show();
+                                                                 //+++++++++++
+                                                             }
+                                                         }
+                                                     });
+
+                                                     // brackett for else isEmpty
+                                                 }
+                                                 //+++++++++++
+                                             }
                                          }
-                                     });
 
-                                     AlertDialog dialog = buidler.create();
-                                     dialog.show();
-                                     //+++++++++++
-                                 }
-                             }
-                         });
-
-                    // brackett for else isEmpty
-                    }
-                     //+++++++++++
-                    }
-               }
 
         );
+
+      mStatusImgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent ImageIntent = new Intent();
+                ImageIntent.setType("image/*");
+                ImageIntent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(ImageIntent.createChooser(ImageIntent, "Select Upload Image"), 1);
+            }
+        });
+
+
+
 
 
 
@@ -113,6 +131,13 @@ public class UpdateStatusActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+    //onactivityresult
+    public void onActivityResult(int reqCode, int resCode, Intent data){
+        if(resCode == RESULT_OK){
+            if(reqCode == 1)
+                mStatusImgView.setImageURI(data.getData());
+        }
     }
 
 }
