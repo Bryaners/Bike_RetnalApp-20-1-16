@@ -10,7 +10,7 @@
         android:layout_height="100dp"
         android:hint="Enter status here...."
         android:gravity="top"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -33,5 +33,13 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:src="@drawable/mario" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Click On image to select you own"
+        android:id="@+id/textView7"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

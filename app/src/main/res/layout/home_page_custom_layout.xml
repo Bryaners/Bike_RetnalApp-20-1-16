@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/usernameHP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="username"/>
+    <ImageView
+        android:id="@+id/ivContactImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:background="#d5d5d5"
+        android:src="@drawable/bike"/>
+
+    <View
+        android:id="@+id/textBackground"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@+id/ivContactImage"
+        android:alpha="0.7"
+        android:background="#111" />
 
     <TextView
         android:id="@+id/statusHP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignBottom="@+id/textBackground"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
         android:text="Comment"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/petImage">
+        <TextView
+            android:id="@+id/usernameHP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="15dp"
+            android:text="Username"/>
+    </FrameLayout>
 
 
-
-
-</LinearLayout>
+</RelativeLayout>
