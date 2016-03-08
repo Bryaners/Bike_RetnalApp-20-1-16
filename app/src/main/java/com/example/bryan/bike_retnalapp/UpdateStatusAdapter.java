@@ -14,12 +14,12 @@ import java.util.List;
 /**
  * Created by Bryan on 02/02/2016.
  */
-public class StatusAdapter extends ArrayAdapter<ParseObject> {
+public class UpdateStatusAdapter extends ArrayAdapter<ParseObject> {
 
     protected Context mContext;
     protected List<ParseObject> mStatus;
                                                             //this status getters and setters
-    public StatusAdapter(Context context, List<ParseObject> status) {
+    public UpdateStatusAdapter(Context context, List<ParseObject> status) {
         super(context, R.layout.home_page_custom_layout, status);
         mContext = context;
         mStatus = status;
@@ -37,23 +37,32 @@ public class StatusAdapter extends ArrayAdapter<ParseObject> {
                     .findViewById(R.id.usernameHP);
             holder.statusHomepage = (TextView) convertView
                     .findViewById(R.id.statusHP);
+           // holder.homeImage = (ImageView) convertView
+                //    .findViewById(R.id.ivContactImage);
 
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-
-
         ParseObject statusObject = mStatus.get(position);
 
-        //title
-
-        String username = statusObject.getString("objectId");
+        //username
+        String username = statusObject.getString("user");
         holder.usernameHomepage.setText(username);
 
         //content
         String status = statusObject.getString("newStatus");
         holder.statusHomepage.setText(status);
+
+
+        //
+       // ParseObject object = mImages.get(position);
+        //get the image
+                                                                //object
+        //Picasso.with(getContext().getApplicationContext()).load(statusObject
+                //.getParseFile("StatusPhoto").getUrl()).noFade().into(holder.homeImage);
+
+        //
 
         return convertView;
     }
@@ -61,6 +70,7 @@ public class StatusAdapter extends ArrayAdapter<ParseObject> {
     public static class ViewHolder{
         TextView usernameHomepage;
         TextView statusHomepage;
+       // ImageView homeImage;
     }
 
 }

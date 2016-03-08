@@ -18,14 +18,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Login here?:"
-        android:id="@+id/textView3" />
+        android:text="Login here:"
+        android:id="@+id/textView3"
+        android:textSize="50dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/usernameLoginTextbox"
-        android:hint="@string/Username_enter" />
+        android:hint="@string/Username_enter"
+        android:layout_marginTop="20dp" />
 
 
     <EditText

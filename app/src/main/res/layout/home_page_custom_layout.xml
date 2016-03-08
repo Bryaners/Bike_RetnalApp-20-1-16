@@ -4,45 +4,37 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
-        android:id="@+id/ivContactImage"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:background="#d5d5d5"
-        android:src="@drawable/bike"/>
+       <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/bike"
+           android:layout_alignParentTop="true"
+           android:layout_alignParentLeft="true"
+           android:layout_alignParentStart="true" />
 
-    <View
-        android:id="@+id/textBackground"
+    <TextView
+        android:id="@+id/usernameHP"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignBottom="@+id/ivContactImage"
-        android:alpha="0.7"
-        android:background="#111" />
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Username"
+        android:gravity="center_vertical"
+        android:textColor="#eb8c00"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_above="@+id/statusHP" />
 
     <TextView
         android:id="@+id/statusHP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#fff"
+
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignBottom="@+id/textBackground"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:text="Comment"/>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/petImage">
-        <TextView
-            android:id="@+id/usernameHP"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="15dp"
-            android:text="Username"/>
-    </FrameLayout>
+        android:text="Comment"
+        android:layout_below="@+id/imageView"
+        android:layout_marginLeft="10dp" />
 
 
 </RelativeLayout>

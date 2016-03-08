@@ -12,13 +12,14 @@ import com.parse.ParseObject;
 import java.util.List;
 
 public class CollegeAdapter extends ArrayAdapter<ParseObject> {
-    protected Context mContext;
-    protected List<ParseObject> mSatus;
 
-    public CollegeAdapter(Context context, List<ParseObject> status) {
-        super(context, R.layout.list_item_layout, status);
+    protected List<ParseObject> mBikes;
+    protected Context mContext;
+
+    public CollegeAdapter(Context context, List<ParseObject> bike) {
+        super(context, R.layout.college_bike_display, bike);
         mContext = context;
-        mSatus = status;
+        mBikes = bike;
 
     }
 
@@ -27,12 +28,12 @@ public class CollegeAdapter extends ArrayAdapter<ParseObject> {
 
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(
-                    R.layout.list_item_layout, null);
+                    R.layout.college_bike_display, null);
             holder = new ViewHolder();
             holder.usernameCollegeCampus = (TextView) convertView
-                    .findViewById(R.id.usernameHP);
+                    .findViewById(R.id.ccName);
             holder.LocationCollegeCampus = (TextView) convertView
-                    .findViewById(R.id.statusHP);
+                    .findViewById(R.id.LocCC);
 
             convertView.setTag(holder);
         } else {
@@ -40,7 +41,7 @@ public class CollegeAdapter extends ArrayAdapter<ParseObject> {
         }
 
 
-    ParseObject statusObject = mSatus.get(position);
+    ParseObject statusObject = mBikes.get(position);
 
     //title
 
@@ -48,8 +49,8 @@ public class CollegeAdapter extends ArrayAdapter<ParseObject> {
     holder.usernameCollegeCampus.setText(username);
 
     //content
-    String status = statusObject.getString("Campus");
-    holder.LocationCollegeCampus.setText(status);
+    String campus = statusObject.getString("Campus");
+    holder.LocationCollegeCampus.setText(campus);
 
     return convertView;
 }

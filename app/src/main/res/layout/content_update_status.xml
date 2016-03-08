@@ -26,20 +26,6 @@
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/imgViewContactManger"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/mario" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Click On image to select you own"
-        android:id="@+id/textView7"
-        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

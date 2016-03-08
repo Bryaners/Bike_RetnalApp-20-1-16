@@ -4,25 +4,22 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 public class UpdateStatusActivity extends AppCompatActivity {
 
     protected EditText mStatusUpdate;
     protected Button mstatusButton;
-    protected ImageView mStatusImgView;
+    //protected ImageView mStatusImgView;  // code at the end of this activity to work.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +30,14 @@ public class UpdateStatusActivity extends AppCompatActivity {
         //init
         mStatusUpdate = (EditText) findViewById(R.id.UpdateTextBox);
         mstatusButton = (Button) findViewById(R.id.statusUpdateButton);
-        mStatusImgView = (ImageView) findViewById(R.id.imgViewContactManger);
+        // mStatusImgView = (ImageView) findViewById(R.id.imgViewContactManger);  //for image to preview wth code at the end of this activity
 
         mstatusButton.setOnClickListener(new View.OnClickListener() {
-
                                              @Override
                                              public void onClick(View view) {
+                                                 //get the current user
+                                                 ParseUser currentUser = ParseUser.getCurrentUser();
+                                                 String currentUserUsername = currentUser.getUsername();
 
                                                  String newStatus = mStatusUpdate.getText().toString();
 
@@ -47,7 +46,7 @@ public class UpdateStatusActivity extends AppCompatActivity {
                                                      AlertDialog.Builder buidler = new AlertDialog.Builder(UpdateStatusActivity.this);
                                                      buidler.setMessage("Status can not be empty!");
                                                      buidler.setTitle("Oops!");
-                                                     buidler.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                                     buidler.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                                                          @Override
                                                          public void onClick(DialogInterface dialogInterface, int which) {
                                                              //close the dialog when button pressed
@@ -62,6 +61,7 @@ public class UpdateStatusActivity extends AppCompatActivity {
 
                                                      ParseObject statusObject = new ParseObject("Status");//class name in parse
                                                      statusObject.put("newStatus", newStatus);
+                                                     statusObject.put("user", currentUserUsername);
 
                                                      statusObject.saveInBackground(new SaveCallback() {
                                                          @Override
@@ -104,7 +104,7 @@ public class UpdateStatusActivity extends AppCompatActivity {
 
         );
 
-      mStatusImgView.setOnClickListener(new View.OnClickListener() {
+    /*  mStatusImgView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -115,22 +115,6 @@ public class UpdateStatusActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
     //onactivityresult
     public void onActivityResult(int reqCode, int resCode, Intent data){
@@ -138,6 +122,28 @@ public class UpdateStatusActivity extends AppCompatActivity {
             if(reqCode == 1)
                 mStatusImgView.setImageURI(data.getData());
         }
+    }
+    //XML Code
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imgViewContactManger"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/mario" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Click On image to select you own"
+        android:id="@+id/textView7"
+        android:layout_gravity="center_horizontal" />
+
+    //
+
+    */
     }
 
 }

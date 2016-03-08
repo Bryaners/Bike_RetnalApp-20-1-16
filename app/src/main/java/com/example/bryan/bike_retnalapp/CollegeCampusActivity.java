@@ -25,13 +25,13 @@ public class CollegeCampusActivity extends ListActivity {
         query.orderByDescending("createdAt");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
-            public void done(List<ParseObject> status, ParseException e) {
+            public void done(List<ParseObject> bike, ParseException e) {
 
                 if (e == null) {
                     //success
-                    mBikes = status;
+                    mBikes = bike;
 
-                    StatusAdapter adapter = new StatusAdapter(getListView().getContext(), mBikes);
+                    UpdateStatusAdapter adapter = new UpdateStatusAdapter(getListView().getContext(), mBikes);
                     setListAdapter(adapter);
                 } else {
                     //there was a probel,. alert user

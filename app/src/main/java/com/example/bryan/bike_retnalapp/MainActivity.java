@@ -10,6 +10,7 @@ import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.List;
 
@@ -17,52 +18,62 @@ public class MainActivity extends ListActivity {
 
 
     protected List<ParseObject> mStatus;
-    protected Button mCollegeStreet;
+    protected Button mUpdateStatus;
+    protected Button mBackToMainMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
 
-        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Status");
-        query.orderByDescending("createdAt");
-        query.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> status, ParseException e) {
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if(currentUser != null) {
+            //show user the homepage status
 
-                if(e==null){
-                    //success
-                    mStatus = status;
+            ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Status");
 
-                    StatusAdapter adapter = new StatusAdapter(getListView().getContext(), mStatus);
-                    setListAdapter(adapter);
-                }else{
-                    //there was a probel,. alert user
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> status, ParseException e) {
+
+                    if (e == null) {
+                        //success
+                        mStatus = status;
+
+                        UpdateStatusAdapter adapter = new UpdateStatusAdapter(getListView().getContext(), mStatus);
+                        setListAdapter(adapter);
+                    } else {
+                        //there was a problem alert user
+                    }
                 }
-            }
-        });
+            });
+        }else{
+            //show the login screen
+            Intent takeusertoLogin = new Intent(this,LoginActivity.class);
+            startActivity(takeusertoLogin);
+        }
 
 
-        //Parse.enableLocalDatastore(this);
+        mUpdateStatus=(Button)findViewById(R.id.UpdateStatud);
+        mBackToMainMenu=(Button)findViewById(R.id.BackToMainMenu);
 
-        //Parse.initialize(this, "cRisvlAkyzGI9gpJSRklDLNflxZ1bDoM8iHdQTOj", "BQlKHhqkSnraH9WHGoS6y41AmH0QxnYCDMOWJCVE");
-
-        /*
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
-        */
-
-        mCollegeStreet=(Button)findViewById(R.id.UpdateStatud);
-
-
-        mCollegeStreet.setOnClickListener(new View.OnClickListener() {
+        mUpdateStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 // Toast.makeText(TransactionActivity.this, "College", Toast.LENGTH_LONG).show();
                 Intent takeUserCollegeCampus = new Intent(MainActivity.this, UpdateStatusActivity.class);
                 startActivity(takeUserCollegeCampus);
+            }
+        });
+
+        mBackToMainMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // Toast.makeText(TransactionActivity.this, "College", Toast.LENGTH_LONG).show();
+                Intent takeUserMainMenu = new Intent(MainActivity.this, HomePageActivity.class);
+                startActivity(takeUserMainMenu);
             }
         });
 

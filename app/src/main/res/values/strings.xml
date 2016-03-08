@@ -10,7 +10,7 @@
     <string name="Login_in">Login</string>
     <string name="title_activity_login">LoginActivity</string>
 
-    <string name="Comment_section">Update</string>
+    <string name="Comment_section">Live Chat</string>
     <string name="LogOut">LogOut</string>
     <string name="title_activity_transaction">TransactionActivity</string>
     <string name="title_activity_main_campus">MainCampusActivity</string>

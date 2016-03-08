@@ -26,14 +26,6 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-       // Parse.enableLocalDatastore(this);
-
-       // Parse.initialize(this, "cRisvlAkyzGI9gpJSRklDLNflxZ1bDoM8iHdQTOj", "BQlKHhqkSnraH9WHGoS6y41AmH0QxnYCDMOWJCVE");
-
-       // ParseObject testObject = new ParseObject("Transaction");
-       // testObject.put("NameOfBike", "Bike 5");
-
-       // testObject.saveInBackground();
     //inistizing
 
         mUsername = (EditText) findViewById(R.id.usernameLoginTextbox);

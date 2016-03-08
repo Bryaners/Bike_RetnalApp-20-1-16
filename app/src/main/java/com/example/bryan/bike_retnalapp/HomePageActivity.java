@@ -2,10 +2,7 @@ package com.example.bryan.bike_retnalapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,28 +46,21 @@ public class HomePageActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Toast.makeText(HomePageActivity.this, "clicked rent bike button", Toast.LENGTH_LONG).show();
-                Intent takeUserToStatus = new Intent(HomePageActivity.this, MainActivity.class);
+                Intent takeUserToStatus = new Intent(HomePageActivity.this, GalleryActivity.class);
                 startActivity(takeUserToStatus);
             }
         });
 
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
 
 
-            }
-        });
+
     }
-                    //Commit test
+
+
+
+    //Commit test
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -89,8 +79,8 @@ public class HomePageActivity extends AppCompatActivity {
         switch(id){
             case R.id.updateStatus:
         //take user to update status activity
-                Intent takeUserColl = new Intent(this, CollegeCampusActivity.class);
-                startActivity(takeUserColl);
+                Intent takeUserToStatus = new Intent(HomePageActivity.this, MainActivity.class);
+                startActivity(takeUserToStatus);
         break;
 
             case R.id.logout_user:
