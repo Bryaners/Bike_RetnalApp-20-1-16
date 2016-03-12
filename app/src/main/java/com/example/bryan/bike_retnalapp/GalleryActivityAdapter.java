@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.parse.ParseObject;
 import com.squareup.picasso.Picasso;
@@ -33,6 +34,10 @@ public class GalleryActivityAdapter extends ArrayAdapter<ParseObject>{
             convertView = LayoutInflater.from(mContext).inflate(
                     R.layout.single_row, null);
             holder = new ViewHolder();
+
+            holder.usernameHomepage = (TextView) convertView
+                    .findViewById(R.id.usernameHP);
+
             holder.homeImage = (ImageView) convertView
                     .findViewById(R.id.imageViewHome);
             convertView.setTag(holder);
@@ -43,7 +48,13 @@ public class GalleryActivityAdapter extends ArrayAdapter<ParseObject>{
         }
 
 
+
         ParseObject object = mImages.get(position);
+
+
+        //username
+        String username = object.getString("user");
+        holder.usernameHomepage.setText(username);
         //get the image
 
         Picasso.with(getContext().getApplicationContext()).load(object.getParseFile("imageContent").getUrl()).noFade().into(holder.homeImage);
@@ -56,6 +67,7 @@ public class GalleryActivityAdapter extends ArrayAdapter<ParseObject>{
 
 
     public static class ViewHolder {
+        TextView usernameHomepage;
         ImageView homeImage;
 
     }

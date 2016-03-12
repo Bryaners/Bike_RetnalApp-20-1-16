@@ -31,7 +31,8 @@ public class CollegeCampusActivity extends ListActivity {
                     //success
                     mBikes = bike;
 
-                    UpdateStatusAdapter adapter = new UpdateStatusAdapter(getListView().getContext(), mBikes);
+                    //how the adapter to populate the list view
+                    CollegeAdapter adapter = new CollegeAdapter(getListView().getContext(), mBikes);
                     setListAdapter(adapter);
                 } else {
                     //there was a probel,. alert user

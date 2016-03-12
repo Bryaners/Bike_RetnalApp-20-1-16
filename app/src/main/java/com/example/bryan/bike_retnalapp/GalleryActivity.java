@@ -19,6 +19,7 @@ import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.io.File;
@@ -120,6 +121,11 @@ public class GalleryActivity extends ListActivity {
         mUploadImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+               final ParseUser currentUser = ParseUser.getCurrentUser();
+                 final String currentUserUsername = currentUser.getUsername();
+
+
                 //create parse object for image to upload       //ImageUploads
                 final ParseObject imageUpload = new ParseObject("ImageUploads");
                 try{
@@ -137,6 +143,7 @@ public class GalleryActivity extends ListActivity {
                             @Override
                             public void done(com.parse.ParseException e) {
                                 if(e == null){
+                                    imageUpload.put("user", currentUserUsername);
                                                     //imageContent
                                     imageUpload.put("imageContent", file);
                                     imageUpload.saveInBackground(new SaveCallback() {

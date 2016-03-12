@@ -30,7 +30,7 @@ public class UpdateStatusActivity extends AppCompatActivity {
         //init
         mStatusUpdate = (EditText) findViewById(R.id.UpdateTextBox);
         mstatusButton = (Button) findViewById(R.id.statusUpdateButton);
-        // mStatusImgView = (ImageView) findViewById(R.id.imgViewContactManger);  //for image to preview wth code at the end of this activity
+        //mStatusImgView = (ImageView) findViewById(R.id.imgViewContactManger);  //for image to preview wth code at the end of this activity
 
         mstatusButton.setOnClickListener(new View.OnClickListener() {
                                              @Override
@@ -53,12 +53,10 @@ public class UpdateStatusActivity extends AppCompatActivity {
                                                              dialogInterface.dismiss();
                                                          }
                                                      });
-
                                                      AlertDialog dialog = buidler.create();
                                                      dialog.show();
 
                                                  } else {
-
                                                      ParseObject statusObject = new ParseObject("Status");//class name in parse
                                                      statusObject.put("newStatus", newStatus);
                                                      statusObject.put("user", currentUserUsername);
