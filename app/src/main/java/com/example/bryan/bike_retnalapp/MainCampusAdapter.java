@@ -11,15 +11,15 @@ import com.parse.ParseObject;
 
 import java.util.List;
 
-public class CollegeAdapter extends ArrayAdapter<ParseObject> {
+public class MainCampusAdapter extends ArrayAdapter<ParseObject> {
 
-    protected List<ParseObject> mBikesCollege;
+    protected List<ParseObject> mBikes;
     protected Context mContext;
 
-    public CollegeAdapter(Context context, List<ParseObject> bike) {
+    public MainCampusAdapter(Context context, List<ParseObject> bike) {
         super(context, R.layout.college_bike_display, bike);
         mContext = context;
-        mBikesCollege = bike;
+        mBikes = bike;
 
     }
 
@@ -41,23 +41,23 @@ public class CollegeAdapter extends ArrayAdapter<ParseObject> {
         }
 
 
-    ParseObject statusObject = mBikesCollege.get(position);
+        ParseObject statusObject = mBikes.get(position);
 
-    //title
+        //title
 
-    String username = statusObject.getString("NameOfBike");
-    holder.usernameCollegeCampus.setText(username);
+        String username = statusObject.getString("NameOfBike");
+        holder.usernameCollegeCampus.setText(username);
 
-    //content
-    String campus = statusObject.getString("Campus");
-    holder.LocationCollegeCampus.setText(campus);
+        //content
+        String campus = statusObject.getString("Campus");
+        holder.LocationCollegeCampus.setText(campus);
 
-    return convertView;
-}
+        return convertView;
+    }
 
- public static class ViewHolder{
-     TextView usernameCollegeCampus;
-     TextView LocationCollegeCampus;
- }
+    public static class ViewHolder{
+        TextView usernameCollegeCampus;
+        TextView LocationCollegeCampus;
+    }
 
 }

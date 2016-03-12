@@ -18,4 +18,12 @@
         android:id="@+id/imageViewHome"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/bike" />
+
+    <TextView
+        android:id="@+id/DateMadeHP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Date Created"
+        android:gravity="center_vertical" />
 </LinearLayout>

@@ -35,6 +35,9 @@ public class GalleryActivityAdapter extends ArrayAdapter<ParseObject>{
                     R.layout.single_row, null);
             holder = new ViewHolder();
 
+            holder.createdDate = (TextView) convertView
+                    .findViewById(R.id.DateMadeHP);
+
             holder.usernameHomepage = (TextView) convertView
                     .findViewById(R.id.usernameHP);
 
@@ -44,7 +47,6 @@ public class GalleryActivityAdapter extends ArrayAdapter<ParseObject>{
         } else {
 
             holder = (ViewHolder) convertView.getTag();
-
         }
 
 
@@ -52,11 +54,16 @@ public class GalleryActivityAdapter extends ArrayAdapter<ParseObject>{
         ParseObject object = mImages.get(position);
 
 
-        //username
+        //username DateMadeHP
         String username = object.getString("user");
         holder.usernameHomepage.setText(username);
-        //get the image
 
+        //dateCreated
+
+        String DateCreated = object.getString("createdAt");
+        holder.createdDate.setText(DateCreated);
+
+        //image
         Picasso.with(getContext().getApplicationContext()).load(object.getParseFile("imageContent").getUrl()).noFade().into(holder.homeImage);
 
 
@@ -67,6 +74,7 @@ public class GalleryActivityAdapter extends ArrayAdapter<ParseObject>{
 
 
     public static class ViewHolder {
+        TextView createdDate;
         TextView usernameHomepage;
         ImageView homeImage;
 

@@ -16,6 +16,8 @@
     <string name="title_activity_main_campus">MainCampusActivity</string>
     <string name="title_activity_college_campus">CollegeCampusActivity</string>
     <string name="title_activity_bike_adapter">BikeAdapter</string>
+    <string name="title_activity_main_campus_adapter">MainCampusAdapter</string>
+    <string name="title_activity_rental_detail_view">RentalDetailView</string>
 
 
 

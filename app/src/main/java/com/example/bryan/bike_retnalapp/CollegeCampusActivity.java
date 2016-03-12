@@ -1,7 +1,10 @@
 package com.example.bryan.bike_retnalapp;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -13,7 +16,7 @@ import java.util.List;
 
 public class CollegeCampusActivity extends ListActivity {
 
-    protected List<ParseObject> mBikes;
+    protected List<ParseObject> mBikesCollege;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +24,7 @@ public class CollegeCampusActivity extends ListActivity {
         setContentView(R.layout.activity_college_campus);
 
         // in from NoteApp
-        ParseQuery<ParseObject> query = new ParseQuery<>("Transaction");
+        ParseQuery<ParseObject> query = new ParseQuery<>("CollegeStreetBikes");
         query.orderByDescending("createdAt");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -29,10 +32,10 @@ public class CollegeCampusActivity extends ListActivity {
 
                 if (e == null) {
                     //success
-                    mBikes = bike;
+                    mBikesCollege = bike;
 
                     //how the adapter to populate the list view
-                    CollegeAdapter adapter = new CollegeAdapter(getListView().getContext(), mBikes);
+                    CollegeAdapter adapter = new CollegeAdapter(getListView().getContext(), mBikesCollege);
                     setListAdapter(adapter);
                 } else {
                     //there was a probel,. alert user
@@ -44,4 +47,17 @@ public class CollegeCampusActivity extends ListActivity {
         //in from noteApp
     }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        ParseObject statusObject = mBikesCollege.get(position);
+        String objectId = statusObject.getObjectId();
+
+        Toast.makeText(CollegeCampusActivity.this, objectId, Toast.LENGTH_SHORT).show();
+
+        Intent goToDetailedView = new Intent(CollegeCampusActivity.this, RentalDetailView.class);
+        goToDetailedView.putExtra("objectID", objectId);
+        startActivity(goToDetailedView);
+    }
 }

@@ -5,15 +5,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <application
-        android:name="com.example.bryan.bike_retnalapp.ParseApplication"
+        android:name=".ParseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:supportsRtl="true" >
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
@@ -21,20 +22,17 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:label="Register Page"
-            >
+            android:label="Register Page" >
         </activity>
         <activity
             android:name=".GalleryActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-
         </activity>
         <activity
             android:name=".HomePageActivity"
             android:label="Main Menu"
             android:theme="@style/AppTheme.NoActionBar" >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,14 +58,12 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-
         </activity>
         <activity
             android:name=".UpdateStatusActivity"
             android:label="updatagemanifestname"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -77,15 +73,22 @@
             android:name=".UpdateStatusActivity"
             android:label="updatagemanifestname"
             android:theme="@style/AppTheme.NoActionBar" >
-
         </activity>
         <activity
             android:name=".BikeAdapter"
             android:label="@string/title_activity_bike_adapter"
             android:theme="@style/AppTheme.NoActionBar" >
-
         </activity>
-
+        <activity
+            android:name=".MainCampusAdapter"
+            android:label="@string/title_activity_main_campus_adapter"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".RentalDetailView"
+            android:label="@string/title_activity_rental_detail_view"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
