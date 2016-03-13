@@ -23,6 +23,16 @@ public class CollegeCampusActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_college_campus);
 
+        //test
+
+        ParseObject gameScore = new ParseObject("GameScore");
+        gameScore.put("score", 1337);
+        gameScore.put("playerName", "Sean Plott");
+        gameScore.put("cheatMode", false);
+        gameScore.saveInBackground();
+
+        //
+
         // in from NoteApp
         ParseQuery<ParseObject> query = new ParseQuery<>("CollegeStreetBikes");
         query.orderByDescending("createdAt");
@@ -45,6 +55,8 @@ public class CollegeCampusActivity extends ListActivity {
         });
 
         //in from noteApp
+
+        //
     }
 
     @Override
@@ -53,6 +65,10 @@ public class CollegeCampusActivity extends ListActivity {
 
         ParseObject statusObject = mBikesCollege.get(position);
         String objectId = statusObject.getObjectId();
+
+        //can delete a single item in the parse table
+        //statusObject.remove("Campus");
+        //statusObject.saveInBackground();
 
         Toast.makeText(CollegeCampusActivity.this, objectId, Toast.LENGTH_SHORT).show();
 
