@@ -133,7 +133,7 @@ public class GalleryActivity extends ListActivity {
                     byte[] fileBytes = FileHelper.getByteArrayFromFile(GalleryActivity.this, mMediaUri);
                     if(fileBytes == null){
                         //there was an error
-                        Toast.makeText(getApplicationContext(), "There was an error. Try again!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "There was an error.", Toast.LENGTH_LONG).show();
                     }else{
 
                         fileBytes = FileHelper.reduceImageForUpload(fileBytes);

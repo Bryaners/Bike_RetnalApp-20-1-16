@@ -57,9 +57,9 @@
         android:text="@string/Sign_Up"
         android:id="@+id/Registerbutton"
         android:layout_below="@+id/PasswordRegisterEditText"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="85dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -71,5 +71,24 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="50dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login "
+        android:id="@+id/LoginBtnRegPage"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="or"
+        android:id="@+id/textView8"
+        android:layout_gravity="center"
+        android:layout_below="@+id/Registerbutton"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

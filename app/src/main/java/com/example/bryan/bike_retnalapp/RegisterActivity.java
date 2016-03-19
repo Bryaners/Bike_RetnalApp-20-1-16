@@ -18,6 +18,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected EditText mEmail;
     protected EditText mPassword;
     protected Button mRegisterButton;
+    protected Button mLoginBtnRegPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +35,22 @@ public class RegisterActivity extends AppCompatActivity {
         testObject.put("byran", "Power");
         testObject.saveInBackground();*/
 
-        Toast.makeText(RegisterActivity.this,"App is in launched on the 19th", Toast.LENGTH_LONG).show();
+      //  Toast.makeText(RegisterActivity.this,"App is in launched on the 19th", Toast.LENGTH_LONG).show();
         //initialise the the edittexts
         mUsername = (EditText)findViewById(R.id.UsernameRegisterEditTextEditText);
         mEmail = (EditText)findViewById(R.id.EmailRegistereditText);
         mPassword = (EditText)findViewById(R.id.PasswordRegisterEditText);
         mRegisterButton=(Button)findViewById(R.id.Registerbutton);
+        mLoginBtnRegPage=(Button)findViewById(R.id.LoginBtnRegPage);
+
+       mLoginBtnRegPage.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent takeUserLogin = new Intent(RegisterActivity.this, LoginActivity.class);
+               startActivity(takeUserLogin);
+           }
+       });
+
 
         mRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = mPassword.getText().toString().trim();
                 String email = mEmail.getText().toString().trim();
 
-               // Toast.makeText(RegisterActivity.this,"clicked on button", Toast.LENGTH_LONG).show();
+                // Toast.makeText(RegisterActivity.this,"clicked on button", Toast.LENGTH_LONG).show();
                 ParseUser user = new ParseUser();
                 user.setUsername(username);
                 user.setPassword(password);
@@ -57,15 +68,15 @@ public class RegisterActivity extends AppCompatActivity {
                 user.signUpInBackground(new SignUpCallback() {
                     @Override
                     public void done(ParseException e) {
-                        if(e==null){
+                        if (e == null) {
                             //user sign up complete
-                            Toast.makeText(RegisterActivity.this,"logged In", Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterActivity.this, "logged In", Toast.LENGTH_LONG).show();
                             Intent takeUserHome = new Intent(RegisterActivity.this, HomePageActivity.class);
                             startActivity(takeUserHome);
 
-                        }else{
+                        } else {
                             //error signing the user up. tell user
-                            Toast.makeText(RegisterActivity.this,"Error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterActivity.this, "Error", Toast.LENGTH_LONG).show();
 
                         }
                     }

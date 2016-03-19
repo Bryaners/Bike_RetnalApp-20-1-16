@@ -1,29 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+<ImageView
+android:id="@+id/imageViewHome"
+android:layout_width="match_parent"
+android:layout_height="250dp"
+android:scaleType="fitXY"
+android:background="#d5d5d5"
+android:src="@drawable/bike"/>
+
+<View
+android:id="@+id/textBackground"
+android:layout_width="match_parent"
+android:layout_height="60dp"
+android:layout_alignBottom="@+id/ivContactImage"
+android:alpha="0.7"
+android:background="#111" />
+
+<TextView
+android:id="@+id/usernameHP"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:textColor="#fff"
+android:textAppearance="?android:attr/textAppearanceLarge"
+android:layout_alignBottom="@+id/textBackground"
+android:layout_marginBottom="16dp"
+android:layout_marginLeft="16dp"
+android:text="Username"/>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_below="@+id/petImage">
     <TextView
         android:id="@+id/usernameHP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Username"
-        android:gravity="center_vertical"
-   />
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        />
+</FrameLayout>
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/imageViewHome"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/bike" />
 
-    <TextView
-        android:id="@+id/DateMadeHP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Date Created"
-        android:gravity="center_vertical" />
-</LinearLayout>
+    </RelativeLayout>

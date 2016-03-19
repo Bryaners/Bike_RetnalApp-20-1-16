@@ -15,56 +15,77 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Main Menu"
         android:id="@+id/textView"
+
+        android:textSize="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rent a bike"
         android:id="@+id/RentBikeButton"
+
+
+        android:layout_marginTop="37dp"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/CounterButton"
+        android:layout_alignEnd="@+id/CounterButton" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View map"
         android:id="@+id/MapButton"
-        android:layout_below="@+id/RentBikeButton"
-        android:layout_centerHorizontal="true" />
+
+
+        android:layout_alignTop="@+id/RentBikeButton"
+        android:layout_alignRight="@+id/InfoButton"
+        android:layout_alignEnd="@+id/InfoButton"
+        android:layout_alignLeft="@+id/InfoButton"
+        android:layout_alignStart="@+id/InfoButton" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="QR Infomation"
         android:id="@+id/InfoButton"
-        android:layout_below="@+id/MapButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/RentBikeButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Counter"
+        android:text="Counter"
         android:id="@+id/CounterButton"
-        android:layout_below="@+id/MapButton"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Gallery Section"
-        android:id="@+id/GalleryButton"
-        android:layout_below="@+id/button"
+        android:layout_alignTop="@+id/InfoButton"
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gallery"
+        android:id="@+id/GalleryButton"
+        android:layout_below="@+id/InfoButton"
+        android:layout_alignRight="@+id/InfoButton"
+        android:layout_alignEnd="@+id/InfoButton"
+        android:layout_alignLeft="@+id/InfoButton"
+        android:layout_alignStart="@+id/InfoButton" />
+
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Information"
         android:id="@+id/button"
-        android:layout_below="@+id/InfoButton"
-        android:layout_centerHorizontal="true" />
+        android:textColor="#ffffff"
+
+        android:layout_below="@+id/CounterButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
