@@ -18,6 +18,9 @@
     <string name="title_activity_bike_adapter">BikeAdapter</string>
     <string name="title_activity_main_campus_adapter">MainCampusAdapter</string>
     <string name="title_activity_rental_detail_view">RentalDetailView</string>
+    <string name="title_activity_button_livechattest">ButtonLivechattest</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps_activity_tests">Map</string>
 
 
 

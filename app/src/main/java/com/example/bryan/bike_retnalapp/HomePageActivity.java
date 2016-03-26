@@ -2,6 +2,8 @@ package com.example.bryan.bike_retnalapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,10 +26,22 @@ public class HomePageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+        //getActionBar().setDisplayHomeAsUpEnabled(false);
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "LiveChat has been activated", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Intent takeUserToLiveChat = new Intent(HomePageActivity.this, MainActivity.class);
+                startActivity(takeUserToLiveChat);
+            }
+        });
 
 
         mRentaBike=(Button)findViewById(R.id.RentBikeButton);
+        mGallery=(Button)findViewById(R.id.GalleryButton);
+        mViewMap =(Button)findViewById(R.id.MapButton);
 
         mRentaBike.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +53,7 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
-        mGallery=(Button)findViewById(R.id.GalleryButton);
+
 
         mGallery.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +65,15 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
+        mViewMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Toast.makeText(HomePageActivity.this, "clicked rent bike button", Toast.LENGTH_LONG).show();
+                Intent takeUserToGMaps = new Intent(HomePageActivity.this, MapsActivityTESTS.class);
+                startActivity(takeUserToGMaps);
+            }
+        });
 
 
 

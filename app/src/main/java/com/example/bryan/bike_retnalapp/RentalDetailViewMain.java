@@ -16,7 +16,7 @@ import com.parse.ParseQuery;
 
 import java.util.List;
 
-public class RentalDetailView extends AppCompatActivity {
+public class RentalDetailViewMain extends AppCompatActivity {
 
     String objectId;
     protected TextView mBikeage;
@@ -25,7 +25,7 @@ public class RentalDetailView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rental_detail_view);
+        setContentView(R.layout.activity_rental_detail_view2);
 
         //initialise
         mBikeage = (TextView) findViewById(R.id.bikeDetailView);
@@ -36,7 +36,7 @@ public class RentalDetailView extends AppCompatActivity {
 
         mRentBikeBtn = (Button) findViewById(R.id.rentBtn);
 
-        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("CollegeStreetBikes");
+        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Transaction");
         query.getInBackground(objectId, new GetCallback<ParseObject>() {
             @Override
             public void done(ParseObject parseObject, ParseException e) {
@@ -47,7 +47,7 @@ public class RentalDetailView extends AppCompatActivity {
 
                 } else {
                     //there was an error
-                    Toast.makeText(RentalDetailView.this, "Error with bike rentals", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RentalDetailViewMain.this, "Error with bike rentals", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -58,8 +58,8 @@ public class RentalDetailView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(RentalDetailView.this, "btn working clicking", Toast.LENGTH_LONG).show();
-                Intent takeUsertoReg = new Intent(RentalDetailView.this, CollegeCampusActivity.class);
+                Toast.makeText(RentalDetailViewMain.this, "btn working clicking", Toast.LENGTH_LONG).show();
+                Intent takeUsertoReg = new Intent(RentalDetailViewMain.this, MainCampusActivity.class);
                 startActivity(takeUsertoReg);
                 deleteStudent(objectId);
 
@@ -75,7 +75,7 @@ public class RentalDetailView extends AppCompatActivity {
 
         public void deleteStudent(String objectId){
 
-            ParseQuery<ParseObject> query=ParseQuery.getQuery("CollegeStreetBikes");
+            ParseQuery<ParseObject> query=ParseQuery.getQuery("Transaction");
             query.whereEqualTo("objectId",objectId);
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override

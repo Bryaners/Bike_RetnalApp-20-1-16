@@ -1,7 +1,10 @@
 package com.example.bryan.bike_retnalapp;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -42,6 +45,25 @@ public class MainCampusActivity extends ListActivity {
         });
 
         //in from noteApp
+
+        //
     }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        ParseObject statusObject = mBikesMain.get(position);
+        String objectId = statusObject.getObjectId();
+
+        //can delete a single item in the parse table
+        //statusObject.remove("Campus");
+        //statusObject.saveInBackground();
+
+        Toast.makeText(MainCampusActivity.this, objectId, Toast.LENGTH_SHORT).show();
+
+        Intent goToDetailedView2 = new Intent(MainCampusActivity.this, RentalDetailViewMain.class);
+        goToDetailedView2.putExtra("objectID", objectId);
+        startActivity(goToDetailedView2);
+    }
 }

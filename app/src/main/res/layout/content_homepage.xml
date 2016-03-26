@@ -83,7 +83,6 @@
         android:layout_height="wrap_content"
         android:text="Information"
         android:id="@+id/button"
-        android:textColor="#ffffff"
 
         android:layout_below="@+id/CounterButton"
         android:layout_alignParentLeft="true"

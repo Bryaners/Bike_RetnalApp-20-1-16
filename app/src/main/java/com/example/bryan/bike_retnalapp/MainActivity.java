@@ -26,6 +26,8 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
 
+
+
         ParseUser currentUser = ParseUser.getCurrentUser();
         if(currentUser != null) {
             //show user the homepage status
