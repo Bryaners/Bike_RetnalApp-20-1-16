@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
+
         android:layout_alignParentEnd="true"
         android:textColor="#88ffaa"
         android:layout_marginTop="45dp">
@@ -24,8 +25,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="25dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="College Street bikes bud"
+        android:text="College Street: Select a bike"
         android:id="@+id/textView6"
         android:layout_alignParentTop="true"
 
