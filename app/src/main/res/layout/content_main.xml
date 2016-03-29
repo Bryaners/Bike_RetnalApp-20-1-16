@@ -6,32 +6,30 @@
 
     <Button
         android:layout_width="150dp"
-        android:layout_height="62dp"
+        android:layout_height="50dp"
         android:text="Back"
         android:id="@+id/BackToMainMenu"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="150dp"
-        android:layout_height="62dp"
+        android:layout_height="50dp"
         android:text="UpdateStatus"
         android:id="@+id/UpdateStatud"
         android:layout_gravity="right"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="417dp"
-        android:paddingLeft="10dp"
-        android:layout_marginBottom="27dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="470dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="60dp">
+        android:layout_alignParentStart="true">
     </ListView>
 
 </RelativeLayout>

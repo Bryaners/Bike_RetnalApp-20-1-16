@@ -4,6 +4,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -17,11 +18,29 @@ import java.util.List;
 public class MainCampusActivity extends ListActivity {
 
     protected List<ParseObject> mBikesMain;
+    protected Button mReturns;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_campus);
+
+
+        //**************************************************************
+
+        mReturns =(Button)findViewById(R.id.ReturnsBtn);
+
+        mReturns.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Toast.makeText(HomePageActivity.this, "clicked rent bike button", Toast.LENGTH_LONG).show();
+                Intent takeUserToRentBike = new Intent(MainCampusActivity.this, ReturnsRentals.class);
+                startActivity(takeUserToRentBike);
+            }
+        });
+
+        //**************************************************************
 
         // in from NoteApp
         ParseQuery<ParseObject> query = new ParseQuery<>("Transaction");

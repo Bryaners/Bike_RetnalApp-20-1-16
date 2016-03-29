@@ -35,13 +35,11 @@
             android:label="Main Menu"
             android:parentActivityName=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".TransactionActivity"
@@ -116,9 +114,11 @@
         <activity
             android:name=".MapsActivityTESTS"
             android:label="@string/title_activity_maps_activity_tests" >
-
-
-
+        </activity>
+        <activity
+            android:name=".ReturnsRentals"
+            android:label="@string/title_activity_returns_rentals"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 

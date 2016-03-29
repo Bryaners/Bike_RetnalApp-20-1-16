@@ -20,10 +20,9 @@
 
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-
         android:layout_alignParentEnd="true"
         android:textColor="#88ffaa"
         android:layout_marginTop="45dp">
@@ -38,5 +37,13 @@
         android:id="@+id/textView6"
         android:layout_alignParentTop="true"
 
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Returns Here"
+        android:id="@+id/ReturnsBtn"
+        android:layout_below="@android:id/list"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
