@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top|left"
         android:layout_marginTop="65dp"
-        android:layout_marginLeft="20dp"
-        android:src="@android:drawable/ic_dialog_email" />
+        android:layout_marginLeft="10dp"
+        android:src="@android:drawable/ic_menu_sort_by_size" />
 
 </android.support.design.widget.CoordinatorLayout>
