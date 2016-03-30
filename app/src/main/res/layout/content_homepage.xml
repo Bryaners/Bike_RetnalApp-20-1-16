@@ -22,7 +22,6 @@
     <Button
         android:layout_width="match_parent"
         android:text="Rent a bike"
-
         android:layout_marginTop="28dp"
         android:id="@+id/RentBikeButton"
         android:layout_height="60dp"
@@ -47,8 +46,6 @@
         android:layout_height="60dp"
         android:text="Gallery"
         android:id="@+id/GalleryButton"
-
-        android:layout_marginTop="28dp"
         android:background="#ff7c00"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -58,8 +55,6 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Information"
-
-
         android:id="@+id/button"
         android:background="#fdff00"
         android:layout_below="@+id/RentBikeButton"

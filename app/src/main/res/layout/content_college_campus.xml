@@ -13,13 +13,13 @@
 
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="350dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
 
         android:layout_alignParentEnd="true"
         android:textColor="#88ffaa"
-        android:layout_marginTop="45dp">
+        android:layout_marginTop="65dp">
     </ListView>
 
     <TextView
@@ -27,9 +27,27 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="College Street: Select a bike"
+        android:text="College Street"
         android:id="@+id/textView6"
         android:layout_alignParentTop="true"
 
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Select a bike"
+        android:id="@+id/textView13"
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Returns Here"
+        android:id="@+id/ReturnBtnCollege"
+        android:layout_below="@android:id/list"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
 </RelativeLayout>

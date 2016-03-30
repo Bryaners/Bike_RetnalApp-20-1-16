@@ -45,8 +45,8 @@ public class ReturnsRentals extends AppCompatActivity {
 
         //real stuff here
         mContinue =(Button)findViewById(R.id.continueWithReturn);
-        mBack =(Button)findViewById(R.id.backToMainCampus);
-        mReturnNum = (EditText) findViewById(R.id.ReturnNumBox);
+        mBack =(Button)findViewById(R.id.backToMainCampusColl);
+        mReturnNum = (EditText) findViewById(R.id.ReturnNumBoxColl);
 
 
         mBack.setOnClickListener(new View.OnClickListener() {

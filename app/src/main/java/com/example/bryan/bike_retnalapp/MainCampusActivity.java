@@ -3,6 +3,7 @@ package com.example.bryan.bike_retnalapp;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -24,6 +25,23 @@ public class MainCampusActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_campus);
+
+
+        //// floating menu btn
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //  .setAction("Action", null).show();
+
+                Intent takeUserToRentBike = new Intent(MainCampusActivity.this, HomePageActivity.class);
+                startActivity(takeUserToRentBike);
+            }
+        });
+
+        ////
 
 
         //**************************************************************
@@ -79,7 +97,7 @@ public class MainCampusActivity extends ListActivity {
         //statusObject.remove("Campus");
         //statusObject.saveInBackground();
 
-        Toast.makeText(MainCampusActivity.this, objectId, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MainCampusActivity.this, objectId, Toast.LENGTH_SHORT).show();
 
         Intent goToDetailedView2 = new Intent(MainCampusActivity.this, RentalDetailViewMain.class);
         goToDetailedView2.putExtra("objectID", objectId);

@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Mian Campus: Select a bike"
+        android:text="Mian Campus"
         android:id="@+id/textView6"
         android:layout_alignParentTop="true"
 
@@ -45,5 +45,14 @@
         android:text="Returns Here"
         android:id="@+id/ReturnsBtn"
         android:layout_below="@android:id/list"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Select a bike"
+        android:id="@+id/textView10"
+        android:layout_below="@+id/textView6"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

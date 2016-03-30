@@ -58,7 +58,7 @@ public class RentalDetailViewMain extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(RentalDetailViewMain.this, "btn working clicking", Toast.LENGTH_LONG).show();
+                //Toast.makeText(RentalDetailViewMain.this, "btn working clicking", Toast.LENGTH_LONG).show();
                 Intent takeUsertoReg = new Intent(RentalDetailViewMain.this, MainCampusActivity.class);
                 startActivity(takeUsertoReg);
                 deleteStudent(objectId);
@@ -85,7 +85,7 @@ public class RentalDetailViewMain extends AppCompatActivity {
 
                         for (ParseObject delete : parseObjects) {
                             delete.deleteInBackground();
-                            Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Your return code is 4444", Toast.LENGTH_LONG).show();
                         }
                     } else {
                         Toast.makeText(getApplicationContext(), "Error in deleting", Toast.LENGTH_SHORT).show();
