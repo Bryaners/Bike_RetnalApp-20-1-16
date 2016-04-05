@@ -19,6 +19,7 @@ public class UpdateStatusActivity extends AppCompatActivity {
 
     protected EditText mStatusUpdate;
     protected Button mstatusButton;
+    protected Button mBack;
     //protected ImageView mStatusImgView;  // code at the end of this activity to work.
 
     @Override
@@ -28,9 +29,20 @@ public class UpdateStatusActivity extends AppCompatActivity {
 
 
         //init
+        mBack = (Button) findViewById(R.id.returnToChat);
         mStatusUpdate = (EditText) findViewById(R.id.UpdateTextBox);
         mstatusButton = (Button) findViewById(R.id.statusUpdateButton);
         //mStatusImgView = (ImageView) findViewById(R.id.imgViewContactManger);  //for image to preview wth code at the end of this activity
+
+        //Trying to fix login button
+        //Trying to fix login button
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent takeUsertoMain = new Intent(UpdateStatusActivity.this, MainActivity.class);
+                startActivity(takeUsertoMain);
+            }
+        });
 
         mstatusButton.setOnClickListener(new View.OnClickListener() {
                                              @Override

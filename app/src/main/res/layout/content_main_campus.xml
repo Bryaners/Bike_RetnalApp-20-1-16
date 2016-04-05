@@ -40,12 +40,15 @@
         android:layout_centerHorizontal="true" />
 
     <Button
+        android:background="@drawable/button_shape"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Returns Here"
         android:id="@+id/ReturnsBtn"
         android:layout_below="@android:id/list"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
 
     <TextView
         android:layout_width="wrap_content"

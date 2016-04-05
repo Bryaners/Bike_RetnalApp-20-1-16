@@ -1,29 +1,57 @@
 package com.example.bryan.bike_retnalapp;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
-public class Splash extends AppCompatActivity {
+public class Splash extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        final ImageView iv = (ImageView) findViewById(R.id.ImageInSplash);
+        final Animation an = AnimationUtils.loadAnimation(getBaseContext(),R.anim.rotate);
+        final Animation an2 = AnimationUtils.loadAnimation(getBaseContext(),R.anim.abc_fade_out);
+
+        //final ImageView iva = (ImageView) findViewById(R.id.ImageInSplash2);
+       // final Animation ana = AnimationUtils.loadAnimation(getBaseContext(),R.anim.rotate);
+       // final Animation an2a = AnimationUtils.loadAnimation(getBaseContext(),R.anim.abc_fade_out);
+
+
+        iv.startAnimation(an);
+
+        //-----------------------------------------------
+        an.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                iv.startAnimation(an2);
+                // iva.startAnimation(an2a);
+
+                finish();
+                Intent i = new Intent(Splash.this, LoginActivity.class);
+                startActivity(i);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
             }
         });
+
+        //-----------------------------------------------
+
+
     }
 
 }

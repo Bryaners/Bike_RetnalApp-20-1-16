@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:id="@+id/UpdateTextBox"
         android:layout_height="100dp"
-        android:hint="Enter status here...."
+        android:hint="Enter comment here...."
         android:gravity="top"
         android:layout_marginTop="50dp"
         android:layout_alignParentTop="true"
@@ -17,6 +17,8 @@
 
 
     <Button
+        android:background="@drawable/button_shape"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Update"
@@ -24,8 +26,20 @@
         android:layout_marginTop="0dp"
         android:layout_below="@+id/textView"
         android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:layout_toEndOf="@+id/textView"
+        android:layout_gravity="right" />
 
+    <Button
+        android:background="@drawable/button_shape"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/returnToChat"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/textView"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
 
 
 </LinearLayout>

@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.parse.ParseUser;
 
@@ -17,7 +18,6 @@ public class HomePageActivity extends AppCompatActivity {
     protected Button mRentaBike;
     protected Button mViewMap;
     protected Button mInfomation;
-    protected Button mCounter;
     protected Button mGallery;
 
 
@@ -26,7 +26,6 @@ public class HomePageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-        //getActionBar().setDisplayHomeAsUpEnabled(false);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -38,10 +37,32 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
+        FloatingActionButton logout = (FloatingActionButton) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "user has logged out", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Intent takeUserOut = new Intent(HomePageActivity.this, LoginActivity.class);
+                startActivity(takeUserOut);
+                Toast.makeText(HomePageActivity.this, "User has logged out", Toast.LENGTH_LONG).show();
+            }
+        });
+
 
         mRentaBike=(Button)findViewById(R.id.RentBikeButton);
         mGallery=(Button)findViewById(R.id.GalleryButton);
         mViewMap =(Button)findViewById(R.id.MapButton);
+        mInfomation =(Button)findViewById(R.id.infoBtn);
+
+        mInfomation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Toast.makeText(HomePageActivity.this, "clicked rent bike button", Toast.LENGTH_LONG).show();
+                Intent takeUserToInfo = new Intent(HomePageActivity.this, Information.class);
+                startActivity(takeUserToInfo);
+            }
+        });
 
         mRentaBike.setOnClickListener(new View.OnClickListener() {
             @Override

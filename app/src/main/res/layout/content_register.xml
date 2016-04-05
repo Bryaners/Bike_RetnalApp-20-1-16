@@ -52,6 +52,8 @@
         android:layout_alignParentEnd="true" />
 
     <Button
+        android:background="@drawable/button_shape"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Sign_Up"
@@ -73,6 +75,8 @@
         android:textSize="50dp" />
 
     <Button
+        android:background="@drawable/button_shape"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login "
