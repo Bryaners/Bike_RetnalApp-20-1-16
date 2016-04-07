@@ -7,31 +7,32 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-public class Information extends AppCompatActivity {
+public class Help extends AppCompatActivity {
 
-    protected Button mMainMenu;
+    protected Button mBackage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_information);
+        setContentView(R.layout.activity_help);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
 
-        mMainMenu =(Button)findViewById(R.id.MM);
+        mBackage =(Button)findViewById(R.id.backBtnHelp);
 
-        mMainMenu.setOnClickListener(new View.OnClickListener() {
+        mBackage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 //Toast.makeText(HomePageActivity.this, "clicked rent bike button", Toast.LENGTH_LONG).show();
-                Intent takeUserToRentBike = new Intent(Information.this, HomePageActivity.class);
-                startActivity(takeUserToRentBike);
+                Intent takeUserToHome = new Intent(Help.this, HomePageActivity.class);
+                startActivity(takeUserToHome);
             }
         });
+
+
 
     }
 

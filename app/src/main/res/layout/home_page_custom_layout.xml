@@ -24,7 +24,8 @@
         android:layout_toEndOf="@+id/imageView"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
-        android:layout_above="@+id/statusHP" />
+        android:layout_above="@+id/statusHP"
+        />
 
     <TextView
         android:id="@+id/statusHP"

@@ -19,6 +19,7 @@ public class HomePageActivity extends AppCompatActivity {
     protected Button mViewMap;
     protected Button mInfomation;
     protected Button mGallery;
+    protected Button mHelp;
 
 
 
@@ -53,6 +54,17 @@ public class HomePageActivity extends AppCompatActivity {
         mGallery=(Button)findViewById(R.id.GalleryButton);
         mViewMap =(Button)findViewById(R.id.MapButton);
         mInfomation =(Button)findViewById(R.id.infoBtn);
+        mHelp =(Button)findViewById(R.id.helpContact);
+
+        mHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Toast.makeText(HomePageActivity.this, "clicked rent bike button", Toast.LENGTH_LONG).show();
+                Intent takeUserToHelp = new Intent(HomePageActivity.this, Help.class);
+                startActivity(takeUserToHelp);
+            }
+        });
 
         mInfomation.setOnClickListener(new View.OnClickListener() {
             @Override

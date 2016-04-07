@@ -7,49 +7,47 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_information"
-    tools:context="com.example.bryan.bike_retnalapp.Information">
+    tools:showIn="@layout/activity_help" tools:context="com.example.bryan.bike_retnalapp.Help">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="What is B-Rentals"
-        android:id="@+id/textView15"
+        android:text="If need help contact us"
+        android:id="@+id/textView18"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="The main aim of this project is to provide an application that will allow clients/students to rent a bike for a period of time from different areas within the WIT.  "
-        android:id="@+id/textView16"
-        android:textSize="20dp"
-        android:layout_below="@+id/textView15"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Call us on:    0877733122"
+        android:id="@+id/textView19"
+        android:layout_below="@+id/textView18"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="51dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="The user will be able to visualize their route on the app through google maps and this will guide them to their destination. They will be able to view or upload images showing places of interest along their route. In addition, the app will feature a Live chat that users can communicate over."
-        android:id="@+id/textView17"
-        android:textSize="20dp"
-        android:layout_below="@+id/textView16"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Email us at :      BRental@gmail.com"
+        android:id="@+id/textView20"
+        android:layout_below="@+id/textView19"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp" />
+        android:layout_marginTop="34dp" />
 
     <Button
+        android:background="@drawable/button_shape"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Menu"
-        android:id="@+id/MM"
+        android:text="Back"
+        android:id="@+id/backBtnHelp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="64dp" />
 </RelativeLayout>

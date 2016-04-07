@@ -21,25 +21,29 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:background="@drawable/button_shape"
+        android:background="@drawable/shape_button"
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+
+        android:layout_width="400dp"
+        android:layout_height="200dp"
         android:text="Main Campus"
         android:id="@+id/Mainbutton"
-        android:layout_marginTop="87dp"
         android:layout_below="@+id/textView2"
+        android:textColorHighlight="#FFFFFF"
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:background="@drawable/button_shape"
+        android:background="@drawable/shape_button_college"
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
         android:text="College Street"
+        android:textColorHighlight="#123fff"
         android:id="@+id/Collegebutton"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/Mainbutton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>
